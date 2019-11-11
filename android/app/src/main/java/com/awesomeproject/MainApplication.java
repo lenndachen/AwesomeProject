@@ -10,6 +10,8 @@ import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
+import com.airbnb.android.react.maps.MapsPackage;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -28,11 +30,20 @@ public class MainApplication extends Application implements ReactApplication {
           return packages;
         }
 
+        @Override 
+            protected List<ReactPackage> getPackages() {
+              return Arrays.<ReactPackage>asList(
+                  new MainReactPackage(),
+
+                  new MapsPackage()
+                  );
+            }
+
         @Override
         protected String getJSMainModuleName() {
           return "index";
         }
-      };
+      ;
 
   @Override
   public ReactNativeHost getReactNativeHost() {
@@ -45,7 +56,7 @@ public class MainApplication extends Application implements ReactApplication {
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this); // Remove this line if you don't want Flipper enabled
   }
-
+      }
   /**
    * Loads Flipper in React Native templates.
    *
