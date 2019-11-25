@@ -1,16 +1,22 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, TextInput} from 'react-native';
-import Weather from "./components/Weather";
-class App extends Component {
+import Weather from './components/Weather';
+export default class App extends Component {
   render() {
     return (
       <View>
-        <Text>
+        <View>
           <Weather />
-        </Text>
+        </View>
+        <Text>Hi Tuesday</Text>
       </View>
-    )
+    );
   }
 }
 
-export default App;
+const styles = StyleSheet.create({
+  map: {
+    height: 100,
+    flex: 1,
+  },
+});

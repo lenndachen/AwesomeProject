@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, TextInput} from 'react-native';
 // import {Map, Marker} from 'google-maps-react';
 import moment from 'moment';
 
-class Weather extends React.Component {
+export default class Weather extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -141,6 +141,7 @@ class Weather extends React.Component {
 
       return console.log('every 3 hours the weather is', weatherIncrement, i);
     });
+
     console.log('weatherIncrement', today);
     console.log('weather day 2', day2);
     console.log('weather day 3', day3);
@@ -190,23 +191,12 @@ class Weather extends React.Component {
   };
 
   render() {
-    const {humidity, city, country} = this.state;
     const mapStyles = {width: '46%', height: '31%'};
     console.log('uturn', this.state.renderedData);
     return (
       <View>
         <Text h1>Welcome to your Weather Forecast!</Text>
-        <Text>
-          {/* <Map
-            className="Map"
-            google={this.props.google}
-            zoom={8}
-            style={mapStyles}
-            initialCenter={{lat: 47.444, lng: -122.176}}
-            center={{lat: this.state.lat, lng: this.state.lng}}
-            map={this.state.map}>       
-          </Map> */}
-        </Text>
+        
       </View>
     );
   }
